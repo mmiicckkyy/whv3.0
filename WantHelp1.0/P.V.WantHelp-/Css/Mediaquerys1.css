@@ -1,0 +1,229 @@
+﻿.mainlogin {
+    display:inline-block;
+    width:27%;
+    height:700px;
+    border:1px solid #000;
+    top:auto;
+    float:right;
+    margin-right:5px;
+}
+.imagenindex {
+    height:350px;
+}
+.main {
+    border:1px solid #000; 
+    height:700px; 
+    margin-left:10px; 
+    width:70%;
+    display:inline-block;
+}
+.titulo {
+    margin:0 auto; 
+    padding-top:15px;
+    width:100%;
+    border: 0px solid #ff0000;
+    color:#B3B3B3;
+    font-size:35px; 
+    font-family:Monotype Corsiva;
+    text-align:center;
+}
+.divImagen {
+    position:fixed;
+    margin-left:30px;
+}
+@media only screen and (max-width: 1520px) {
+   .divImagen, .imagenindex {
+       height:300px;
+    }
+}
+@media only screen and (max-width: 1445px) {
+   .divImagen, .imagenindex {
+       height:270px;
+    }
+}
+@media only screen and (max-width: 1400px) {
+   .divImagen, .imagenindex {
+       height:220px;margin-left:10px;
+    }
+}
+@media only screen and (max-width: 1367px) {
+   .divImagen, .imagenindex {
+       height:210px;margin-left:10px;
+    }
+}
+@media only screen and (max-width: 1320px) {
+   .divImagen, .imagenindex {
+       margin-left:10px;height:180px;
+    }
+}
+@media only screen and (max-width: 1290px) {
+   .divImagen, .imagenindex {
+       margin-left:10px;       
+       height:130px;
+    }
+}
+@media only screen and (max-width: 1255px) {
+   .divImagen, .imagenindex {
+       margin-left:5px;       
+       height:130px;
+    }
+}
+@media only screen and (max-width: 1245px) {
+   .divImagen, .imagenindex {
+       margin-left:0px;       
+       height:130px;
+    }
+}
+@media only screen and (max-width: 1228px) {
+    .divImagen {
+        height:0px;
+    }
+    .imagenindex{
+        height:0px;
+    }
+}
+
+/*--------------------*/
+
+@media only screen and (max-width: 1016px) {
+    .mainlogin {
+        width: 25%;
+    }
+
+    .importante {
+        margin: 0 auto;
+        width: 85%;
+    }
+
+    #body_content {
+        margin: 0 auto;
+        width: 97%;        
+    }
+
+    .main {
+         width:72%;
+    }
+
+    .float-right {
+        border:0px solid #ffffff;
+        width:90%;
+        margin:0 auto;
+    }
+}
+
+@media only screen and (max-width: 962px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;        
+    }
+    .main {
+        margin-left:10%;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:10%;
+    }
+}
+
+@media only screen and (max-width: 855px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;
+    }
+    .main {
+        margin-left:7%;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:7%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;
+    }
+    .main {
+        margin-left:3%;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:3%;
+    }
+}
+@media only screen and (max-width: 760px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;
+    }
+    .main {
+        margin-left:2%;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:2%;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;
+    }
+    .main {
+        margin-left:1%;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:1%;
+    }
+}
+@media only screen and (max-width: 695px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 0px solid #ff0000;
+    }
+    .main {
+        margin-left:1px;
+         width:350px;
+         height:1390px;
+    }
+    .mainlogin {
+        width:250px;
+        margin-right:1px;
+    }
+}
+@media only screen and (max-width: 680px) {
+    #body_content {
+        margin: 0 auto;
+        width: 95%;
+        border: 1px solid #ff0000;
+    }
+    .main {
+        margin-left:1px;
+         width:350px;
+         height:1390px; 
+         float:right;        
+    }
+    .mainlogin {
+        width:250px;
+       display:inline-block;
+    }
+}

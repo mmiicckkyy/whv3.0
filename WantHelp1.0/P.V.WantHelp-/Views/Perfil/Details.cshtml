@@ -1,0 +1,72 @@
+﻿@model P.V.WantHelp_.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label" style="display:none;">
+         @Html.DisplayNameFor(model => model.Id_Usu)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.Id_Usu)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Avatar)
+    </div>
+    <!--<div class="display-field">
+        <img src="~/Avatar/"
+    </div-->
+    @using(Html.BeginForm()){
+        <img src="../../Avatar/@ViewBag.foto" alt="imagen" width="90" />  
+    }
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Apellido_P)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido_P)
+    </div>
+
+    <div class="editor-label">
+         @Html.DisplayNameFor(model => model.Apellido_M)
+    </div>
+    <div class="editor-label">
+        @Html.DisplayFor(model => model.Apellido_M)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sexo)
+    </div>
+    
+    <div class="display-label" style="display:none;">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field" style="display:none;">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {id=Model.Id_Usu}) |<!--esta parte hay q arreglar-->
+    @Html.ActionLink("Home", "Index","Home")
+</p>

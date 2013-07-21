@@ -1,0 +1,117 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.Cursos>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" type="text/css" href="~/Css/ink-min.css">
+<style type="text/css">
+    .circle:hover {
+    /*border: 5px solid transparent;*/
+    /*border:1px solid #65a0d8;*/
+    border-radius: 80px;
+    box-shadow: 0px 2px 0px #65a0d8;
+    }
+    footer {  
+    /*background-color: #414E5E;   
+    height:45px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;*/
+    clear:both;
+    background-color: #414E5E;   
+    font-size: .8em;
+    height: 61px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FF252525');
+    background: #252525;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #696969), color-stop(95%, #363636), color-stop(97%, #313131), color-stop(100%, #252525));
+    background-image: -webkit-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: -moz-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: -o-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+}
+</style>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD">Bienvenido para la creacion de cursos</h2>
+
+<p>
+    <!----@Html.ActionLink("Create New", "Create")--->
+    <a href="/Cursos/Create" class="tooltip circle" title="Crear nuevo Curso">
+        <img src="~/Images/img/folder_new.png"/>
+    </a>
+</p>
+<table class="ink-table hover">
+    <tr>
+        <th style="display:none;">
+            <!---@Html.DisplayNameFor(model => model.Id_Curso)-->
+            Nº
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            <!---@Html.DisplayNameFor(model => model.Fecha_I)-->
+            Fecha Inicial
+        </th>
+        <th>
+           <!--- @Html.DisplayNameFor(model => model.Fecha_F)-->
+            Fecha Final
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urlBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urlHost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="display:none;">
+            @Html.DisplayFor(modelItem => item.Id_Curso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_I)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_F)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urlBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urlHost)
+        </td>
+        <td>
+            <a href="/Cursos/Edit/@item.Id_Curso" class="tooltip circle" title="Editar">
+                <img src="~/Images/edit.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/Cursos/Details/@item.Id_Curso" class="tooltip circle" title="Detalle">
+                <img src="~/Images/detalle.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/Cursos/Delete/@item.Id_Curso" class="tooltip circle" title="Eliminar">
+                <img src="~/Images/eliminar2.jpg"/>
+            </a>
+            <div style="display:none;">@Html.ActionLink("Edit", "Edit", new { id=item.Id_Curso }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Curso }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Curso })
+            </div>
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</section>

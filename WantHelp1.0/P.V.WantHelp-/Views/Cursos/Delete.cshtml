@@ -1,0 +1,98 @@
+﻿@model P.V.WantHelp_.Models.Cursos
+
+@{
+    ViewBag.Title = "Delete";
+}
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div class="centrarH">
+<h2 class="letraD">Delete</h2>
+<div class="Form">
+<h3 class="letraD">¿Seguro que deseas eliminarlo?</h3>
+<fieldset>
+    <div id="backbutton" class="win-backbutton" style="margin-top: 15px;">
+            <a href="/Cursos" class="tooltip circle border" title="Back to List">
+                <img src="~/Images/img/resultset_previous.png"/>
+            </a>
+        </div>
+    <legend>Cursos</legend>
+    <table style="margin:auto;">
+        <tr class="letraD">
+            <td>
+                <div class="display-label">
+                     <b>@Html.DisplayNameFor(model => model.Titulo)</b>
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                     <b>@Html.DisplayNameFor(model => model.Descripcion)</b>
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.Fecha_I)</b>
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.Fecha_F)</b>
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-label" >
+                    <b> @Html.DisplayNameFor(model => model.urlBase)</b>
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.urlHost)</b>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Titulo)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Fecha_I)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Fecha_F)
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.urlBase)
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.urlHost)
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</fieldset>
+    </div>
+@using (Html.BeginForm()) {
+    <div>
+        <input type="submit" value="Delete" /> 
+        <div style="display:none;">@Html.ActionLink("Back to List", "Index")</div>
+        
+    </div>
+}
+</div>
+</div>
+</section>

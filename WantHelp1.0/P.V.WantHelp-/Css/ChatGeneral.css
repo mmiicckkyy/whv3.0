@@ -1,0 +1,76 @@
+#contenedorlogin{ 	
+	margin:0 auto;
+    background: transparent;
+    position:initial;
+    width: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    display: none;
+	border-radius:5px;
+	border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+}
+#enlaceIn{
+    text-align:center;
+	margin:0 auto;
+	background: #1F3E4E;
+    color: #fff;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+}
+#enlaceIn:hover{
+    background: #1F3E4E;
+    color: #bed7fc;   
+}
+#enlaceOut{
+    text-align:center;
+	margin:0 auto;
+    background:  #1F3E4E;
+    color: #fff;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+    border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;     
+	
+}
+#enlaceOut:hover{
+    background: #1F3E4E;
+    color: #bed7fc;
+}
+/*hgjhgkjjjjjjjj*/

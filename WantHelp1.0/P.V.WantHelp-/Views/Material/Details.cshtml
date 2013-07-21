@@ -1,0 +1,57 @@
+﻿@model P.V.WantHelp_.Models.Material
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Material</legend>
+
+    <div class="display-label" style="visibility:hidden;">
+         @Html.DisplayNameFor(model => model.Id_Material)
+    </div>
+    <div class="display-field" style="visibility:hidden;">
+        @Html.DisplayFor(model => model.Id_Material)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cursos.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cursos.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.archivos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.archivos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlBase)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlBase)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.urlHost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.urlHost)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=item.Id_Material }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

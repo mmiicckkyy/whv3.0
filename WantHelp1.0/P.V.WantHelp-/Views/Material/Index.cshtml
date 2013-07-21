@@ -1,0 +1,112 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.Material>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
+
+
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div class="centrarH">
+<h2 class="letraD">Material...</h2>
+
+<p><!---@Html.ActionLink("Create New", "Create")--->
+    <a href="/Material/Create" class="tooltip circle" title="Crear nuevo material">
+    <img src="~/Images/img/folder_new.png"/>
+    </a>
+</p>
+<table class="ink-table hover">
+    <tr>
+        <th style="display:none;">
+            @Html.DisplayNameFor(model => model.Id_Material)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cursos.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.archivos)
+        </th>
+        <th style="display:none;">
+            @Html.DisplayNameFor(model => model.urlBase)
+        </th>
+        <th style="display:none;">
+            @Html.DisplayNameFor(model => model.urlHost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="display:none;">
+            @Html.DisplayFor(modelItem => item.Id_Material)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cursos.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.archivos)
+        </td>
+        <td style="display:none;">
+            @Html.DisplayFor(modelItem => item.urlBase)
+        </td>
+        <td style="display:none;">
+            @Html.DisplayFor(modelItem => item.urlHost)
+        </td>
+
+       <td>
+            <a href="/material/Edit/@item.Id_Material" class="tooltip circle" title="Editar">
+                <img src="~/Images/edit.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/material/Details/@item.Id_Material" class="tooltip circle" title="Detalle">
+                <img src="~/Images/detalle.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/material/Delete/@item.Id_Material" class="tooltip circle" title="Eliminar">
+                <img src="~/Images/eliminar2.jpg"/>
+            </a>
+            <div style="display:none;">
+                @Html.ActionLink("Edit", "Edit", new {id=item.Id_Material}) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id_Material}) |
+                @Html.ActionLink("Delete", "Delete", new {id=item.Id_Material})
+            </div>
+        </td>
+    </tr>
+}
+
+</table>
+
+<script>
+    $(document).ready(function () {
+        var myDropzone = new Dropzone("div#myId", {
+            url: "/Material/SaveFiles",
+            paramName: "file",
+            maxFilesize: 15, // MB
+            accept: function (file, done) {
+                done();
+            },
+            complete: function (data, r) {
+
+                console.log(r.filename);
+                $.post("/Material/guardar",
+                    r,
+                function (respuesta) {
+
+                },"json");
+            }
+        });
+    });
+</script>
+<h2>SaveFiles</h2>
+<div class="demo"></div>
+<div id="myId" class="dropzone"></div>
+</div>
+    </div>
+</section>

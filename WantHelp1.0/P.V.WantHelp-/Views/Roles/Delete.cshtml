@@ -1,0 +1,39 @@
+﻿@model P.V.WantHelp_.Models.webpages_Roles
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<section class="content-wrapper main-content clear-fix">
+    
+<div id="body_Curso">
+    <div id="backbutton" class="win-backbutton">
+        <a href="/Roles" class="tooltip circle border" title="Atras">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+<h2 class="letraD">Esta seguro que desea eliminar el rol?</h2>
+<fieldset>
+    <legend>webpages_Roles</legend>
+    <table>
+        <tr>
+            <td class="letraD">Rol del Id</td>
+            <td>@Html.DisplayFor(model => model.RoleId)</td>
+            
+        </tr>
+        <tr>
+            <td class="letraD">Nombre de Rol</td>
+            <td>@Html.DisplayFor(model => model.RoleName)</td>
+            
+        </tr>
+    </table>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> 
+        
+    </p>
+}
+    </div>
+</section>

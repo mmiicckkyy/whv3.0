@@ -1,0 +1,75 @@
+﻿@model P.V.WantHelp_.Models.Material
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<h2 class="letraD">Nuevo Material</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset >
+        <legend>Material</legend>
+
+        <div class="editor-label" style="visibility:hidden;">
+            @Html.LabelFor(model => model.Id_Material)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Id_Usu, "Usuario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Id_Usu", String.Empty)
+            @Html.ValidationMessageFor(model => model.Id_Usu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Id_Curso, "Cursos")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Id_Curso", String.Empty)
+            @Html.ValidationMessageFor(model => model.Id_Curso)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.archivos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.archivos)
+            @Html.ValidationMessageFor(model => model.archivos)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.urlBase)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.urlBase)
+            @Html.ValidationMessageFor(model => model.urlBase)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.urlHost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.urlHost)
+            @Html.ValidationMessageFor(model => model.urlHost)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+
+<div id="backbutton" class="win-backbutton">
+        <a href="/Material" class="tooltip circle border" title="Atras">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

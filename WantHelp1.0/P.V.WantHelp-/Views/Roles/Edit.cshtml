@@ -1,0 +1,56 @@
+﻿@model P.V.WantHelp_.Models.webpages_Roles
+
+@{
+    ViewBag.Title = "Edit";
+}
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div id="backbutton" class="win-backbutton">
+        <a href="/Roles" class="tooltip circle border" title="Atras">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+    <div class="centrarH">
+<h2 class="letraD">Edit</h2>
+        <div class="Form">
+            @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>webpages_Roles</legend>
+
+        <div class="editor-label" style="visibility: hidden;">
+            @Html.LabelFor(model => model.RoleId)
+        </div>
+        <div class="editor-field" style="visibility: hidden;">
+            @Html.EditorFor(model => model.RoleId)
+            @Html.ValidationMessageFor(model => model.RoleId)
+        </div>
+
+        <div class="letraD">
+            Nombre de Rol
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleName)
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UrlHost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UrlHost)
+            @Html.ValidationMessageFor(model => model.UrlHost)
+        </div>
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+            </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        </div>
+</div>
+</section>
+

@@ -1,0 +1,57 @@
+﻿@model P.V.WantHelp_.Models.webpages_Roles
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div id="backbutton" class="win-backbutton">
+        <a href="/Roles" class="tooltip circle border" title="Back to List">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+    <div class="centrarH">
+<h2 class="letraD">Crear Rol</h2>
+<div class="Form">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>webpages_Roles</legend>
+
+
+        <div class="editor-label" style="display:none;">
+            @Html.LabelFor(model => model.RoleId)
+        </div>
+
+        <div class="editor-label" style="display:none;">
+            @Html.LabelFor(model => model.RoleId)
+        </div>
+
+        <div class="editor-label" style="display:none;">
+            @Html.LabelFor(model => model.RoleId)
+        </div>
+
+        <div class="letraD">
+            Ingrese Nombre De Rol
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleName)
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar"/>
+        </p>
+    </fieldset>
+}
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+      
+}
+        </div>
+</div>
+</section>

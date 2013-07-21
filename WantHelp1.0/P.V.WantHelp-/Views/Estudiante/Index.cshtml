@@ -1,0 +1,61 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.Cursos>
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Css/ink-min.css">
+<style type="text/css">
+    .circle:hover {
+    /*border: 5px solid transparent;*/
+    /*border:1px solid #65a0d8;*/
+    border-radius: 80px;
+    box-shadow: 0px 2px 0px #65a0d8;
+    }
+    footer {  
+    /*background-color: #414E5E;   
+    height:45px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;*/
+    clear:both;
+    background-color: #414E5E;   
+    font-size: .8em;
+    height: 61px;
+    border-radius: 5px 5px 5px 5px;
+    margin:2px 2px 2px 2px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF696969', endColorstr='#FF252525');
+    background: #252525;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #696969), color-stop(95%, #363636), color-stop(97%, #313131), color-stop(100%, #252525));
+    background-image: -webkit-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: -moz-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: -o-linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+    background-image: linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
+}
+</style>
+<h2 class="letraD" style="font-size:30px;">Bienvenido a cursos</h2>
+@foreach (var item in Model){
+    <h3></h3>
+    <h2 style="display:none;">
+        @Html.DisplayFor(modelItem => item.Id_Curso)
+    </h2>
+    
+    <div id="contenedorA">
+        
+    
+        <h1 class="sin-bordes"  style="font-family:Gabriola;font-size:20px;color:#d7d8e1;">
+            @Html.DisplayFor(modelItem => item.Titulo)
+        
+            <span class="forma"></span>
+        </h1>
+        <div style="margin:auto; margin-left:8%;margin-right:8%;">
+            @Html.DisplayFor(modelItem => item.Descripcion)
+            
+        </div>
+       
+            <div style="margin:auto;margin-left:70%;width:35%;margin-top:40px;"><img src="~/Images/cal-icono-9496-32.png">
+                <small>@Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)</small>    
+            </div>
+                    
+    </div>
+    
+}

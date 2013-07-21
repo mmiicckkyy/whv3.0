@@ -1,0 +1,178 @@
+﻿@model P.V.WantHelp_.Models.Cursos
+
+@{
+    ViewBag.Title = "Edit";
+}
+<style type="text/css">
+    
+    input[type="submit"] {
+        background-color: #FFFFFF;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    font-weight: bold;
+    }
+    input[type="text"]:hover{
+        border-color:rgba(82,168,263,0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,0 0px 8px rgba(82, 168, 236, 0.6) ;
+    outline: 0 none;
+    color: #75B9FF;
+    font-weight: bold;
+    }
+    input[type="text"]:focus{
+        border-color:rgba(82,168,263,0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,0 0px 8px rgba(82, 168, 236, 0.6) ;
+    outline: 0 none;
+    color: #75B9FF;
+    font-weight: bold;
+    }
+   input[type="submit"]:hover {
+        border-color:rgba(82,168,263,0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,0 0px 8px rgba(82, 168, 236, 0.6) ;
+    outline: 0 none;
+    color: #75B9FF;
+    font-weight: bold;
+    }
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="~/Js/jquery.ui.datepicker-es.js"></script>
+<script>
+    $(function () {
+        //$("#datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+        //$("#datepicker").datepicker({ dateFormat: "yy-mm-dd" ,appendText: "(yyyy-mm-dd)" });
+        /*$("#datepicker").datepicker({
+            dateFormat: "yy-mm-dd" ,
+            showAnim: "drop",//animacion: show,slideDown,fadeIn,blind,bounce,clip,drop,fold,slide
+            showOn: "button",
+            buttonImage: "../../Images/img/calendar.gif",
+            buttonImageOnly: true
+        });*/
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        $('#datepicker').datepicker({
+            'setDate': '25/02/2013'
+            , altField: '#fecha_texto'
+            , altFormat: "DD, d 'de' MM 'de' yy"
+        });
+        
+        $("#Fecha_I").datepicker({
+            dateFormat: "yy-mm-dd",
+            defaultDate: "+1w",
+            //changeMonth: true, //para modificar el mes
+            numberOfMonths:1,'setDate': '25/02/2013'
+            , altField: '#from_fecha_texto'
+            , altFormat: "DD, d 'de' MM 'de' yy",
+
+            showAnim: "fold",
+            showOn: "button",
+            buttonImage: "../../Images/img/calendar.gif",
+            buttonImageOnly: true,
+
+            onClose: function (selectedDate) {
+                $("#Fecha_F").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        $("#Fecha_F").datepicker({
+            dateFormat: "yy-mm-dd",
+            defaultDate: "+1w",
+            //changeMonth: true,
+            numberOfMonths: 1,
+            'setDate': '25/02/2013'
+            , altField: '#to_fecha_texto'
+            , altFormat: "DD, d 'de' MM 'de' yy",
+
+            showAnim: "fold",
+            showOn: "button",
+            buttonImage: "../../Images/img/calendar.gif",
+            buttonImageOnly: true,
+
+            onClose: function (selectedDate) {
+                $("#Fecha_I").datepicker("option", "maxDate", selectedDate);
+            }
+        });
+  });
+  </script>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div id="backbutton" class="win-backbutton">
+        <a href="/Cursos" class="tooltip circle border" title="Back to List">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+    <div class="centrarH">
+<h2 class="letraD">Editar</h2>
+        <div class="Form">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cursos</legend>
+         <div class="editor-label" style="display:none;">
+            @Html.LabelFor(model => model.Id_Curso)
+        </div>
+        <div class="editor-field" style="display:none;">
+            @Html.EditorFor(model => model.Id_Curso)
+            @Html.ValidationMessageFor(model => model.Id_Curso)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Titulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Titulo)
+            @Html.ValidationMessageFor(model => model.Titulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fecha_I)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fecha_I)
+            @Html.ValidationMessageFor(model => model.Fecha_I)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fecha_F)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fecha_F)
+            @Html.ValidationMessageFor(model => model.Fecha_F)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.urlBase)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.urlBase)
+            @Html.ValidationMessageFor(model => model.urlBase)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.urlHost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.urlHost)
+            @Html.ValidationMessageFor(model => model.urlHost)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+            </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        </div>
+</div>
+</section>

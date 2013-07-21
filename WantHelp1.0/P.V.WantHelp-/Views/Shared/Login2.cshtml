@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Login2";
+}
+
+@using (Html.BeginForm("Login","Account")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li style="margin-left:5px;">
+                Usuario:
+                <input type="text"  style="margin-left:2px; width:90%;" name="Username" id="Username"/>
+            </li>
+            <li style="margin-left:5px;">
+                Contraseña:
+                <input type="password" style="margin-left:2px; width:90%;" name="Password" id="Password"/>
+            </li>            
+        </ol>
+        <input type="submit" style="margin-left:10px; width:25%;" value="Enviar" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Regístrate", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+        Si no tienes cuenta aún.
+    </p>
+}

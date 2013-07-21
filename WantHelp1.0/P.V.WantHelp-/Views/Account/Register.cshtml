@@ -1,0 +1,71 @@
+﻿@model P.V.WantHelp_.Models.RegisterModel
+
+
+@{
+    ViewBag.Title = "Register";
+}
+<link type="text/css" rel="stylesheet" href="~/Css/estilosGeneral.css"/>
+<hgroup class="title">
+    <h1>Registrate</h1>
+</hgroup>
+
+<div class="formRegistro">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <table class="tabla">
+        <tr>
+            <td><div class="etiquetasLabel">Nombres:</div></td>
+            <td>@Html.TextBoxFor(m => m.Nombres)</td>
+        </tr>
+        <tr>
+            <td><div class="etiquetasLabel">Apellido Paterno:</div></td>
+            <td>@Html.TextBoxFor(m => m.ApellidoP)</td>
+        </tr>
+         <tr>
+            <td><div class="etiquetasLabel">Apellido Materno:</div></td>
+            <td>@Html.TextBoxFor(m => m.ApellidoM)</td>
+        </tr>
+        <tr>
+            <td><div class="etiquetasLabel">Sexo:</div></td>
+            <td><select name="Sexo" id="Sexo">
+                    <option value="Masculino" selected>Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><div class="etiquetasLabel">Email:</div></td>
+            <td><input type="email" name="Email" id="Email" /></td>
+        </tr>
+        <tr>
+             <td><div class="etiquetasLabel">Nombre Usuario:</div></td>
+            <td>@Html.TextBoxFor(m => m.UserName)</td>
+        </tr>
+        <tr>
+             <td><div class="etiquetasLabel">Contraseña:</div></td>
+            <td>@Html.PasswordFor(m => m.Password)</td>
+        </tr>
+        <tr>
+             <td><div class="etiquetasLabel">Confirmar Contraseña:</div></td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+        </tr>        
+        <tr>
+            <td></td>
+            <td colspan="2">
+                 <input type="submit" value="Registrar" />
+            </td>
+
+        </tr>
+    </table>
+}
+</div>
+<div>
+    <h3>Registrate con:</h3>
+    <p>
+        Por favor, toma un momento para ser parte de nuestra familia.
+    </p>
+</div><br /><br /><br /><br /><br /><br /><br />
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

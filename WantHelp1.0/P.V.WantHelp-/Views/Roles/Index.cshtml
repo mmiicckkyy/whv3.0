@@ -1,0 +1,59 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.webpages_Roles>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD" style="font-size:35px;">Lista De Roles</h2>
+    <p>
+    <!----@Html.ActionLink("Create New", "Create")--->
+    <a href="/Roles/Create" class="tooltip circle" title="Crear nuevo Rol">
+        <img src="~/Images/img/folder_new.png"/>
+    </a>
+</p>
+<table class="ink-table hover">
+    <tr>
+        <th style="visibility:hidden;">
+            Id Rol
+        </th>
+        
+        <th class="letraD" style="font-size:25px;">Nombre de Rol</th>
+        <th>
+            Direccion URL
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td style="visibility:hidden;">            
+            @Html.DisplayFor(modelItem => item.RoleId)
+        </td>
+        <td style="font-size:16px;">
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlHost)
+        </td>
+        <td>
+            <a href="/Roles/Edit/@item.RoleId" class="tooltip circle" title="Editar">
+                <img src="~/Images/edit.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/Roles/Details/@item.RoleId" class="tooltip circle" title="Detalle">
+                <img src="~/Images/detalle.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/Roles/Delete/@item.RoleId" class="tooltip circle" title="Eliminar">
+                <img src="~/Images/eliminar2.jpg"/>
+            </a>
+            <div style="display:none;">@Html.ActionLink("Edit", "Edit", new { id=item.RoleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoleId}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoleId})
+            </div>
+        </td>
+        
+    </tr>
+}
+</table>
+</div>
+</section>

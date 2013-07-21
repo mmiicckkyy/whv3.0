@@ -1,0 +1,113 @@
+﻿@model P.V.WantHelp_.Models.Cursos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div class="centrarH">
+<h2 class="letraD">Detalles</h2>
+        <div class="Form">
+<fieldset>
+    <div id="backbutton" class="win-backbutton" style="margin-top: 15px;">
+        <a href="/Cursos" class="tooltip circle border" title="Back to List">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>&nbsp;&nbsp;
+        </div>
+    <legend>Cursos</legend>
+    <table style="margin-left:20%; text-align:center;">
+        <tr class="letraD" style="font-size:16px;">
+            
+            <td>
+                <div class="display-label">
+                    <b>@Html.DisplayNameFor(model => model.Titulo)</b>
+                </div>                
+            </td>
+            <td style="display:none;">
+                <div class="editor-label">
+                        @Html.LabelFor(model => model.Id_Curso)
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                     <b>@Html.DisplayNameFor(model => model.Descripcion)</b>
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.Fecha_I)</b>
+                </div>
+            </td>
+            <td>
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.Fecha_F)</b>
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.urlBase)</b>
+                </div>
+            </td>
+            <td style="display:none;">
+                <div class="display-label">
+                    <b> @Html.DisplayNameFor(model => model.urlHost)</b>
+                </div>
+            </td>
+            </tr>
+            <tr>
+               
+                <td style="display:none;">
+                    <div class="editor-field">
+                            @Html.EditorFor(model => model.Id_Curso)
+                            @Html.ValidationMessageFor(model => model.Id_Curso)
+                     </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Titulo)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Descripcion)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Fecha_I)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Fecha_F)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.urlBase)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.urlHost)
+                    </div>
+                </td>
+        </tr>
+    </table>
+           <div>
+            <a href="/Cursos/Edit/@Model.Id_Curso" class="tooltip circle" title="Editar">
+                <img src="~/Images/edit.jpg"/>
+            </a>
+            </div>
+            <div style="display:none;">@Html.ActionLink("Edit", "Edit", new { id=Model.Id_Curso}) 
+
+            </div>
+</fieldset>
+     </div>
+       
+        
+    </div>
+</div>
+
+</section>

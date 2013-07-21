@@ -1,0 +1,101 @@
+﻿.formRegistro {    
+    border:0px solid #000;
+}
+.tabla {
+    margin:0 auto;
+}
+.etiquetasLabel {
+    text-align:right;
+    font-family:Monotype Corsiva;
+    font-size:20px;
+}
+
+.menucursos {
+    border:0px solid #000;
+    position:fixed;
+}
+
+.menudesplegable { 
+    top: 0;
+    left: 0;
+    background: #1F3E4E;
+    position:initial;
+    width: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    display: none;
+	border-radius:5px;
+	border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+}
+.menucursoscel {    
+    text-align:center;
+	left:0;
+    top:0;
+	background: #1F3E4E;
+    color: #fff;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.menucursoscel:hover{
+    background: #1F3E4E;
+    color: #bed7fc;   
+}
+.menucursoscel2{    
+    text-align:center;
+	left:0;
+    top:0;
+    background:  #1F3E4E;
+    color: #fff;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    display: none;
+    border-top: 2px solid #1F3E4E;
+    border-right: 2px solid #1F3E4E;
+    border-bottom: 2px solid #1F3E4E;
+    border-left: 2px solid #1F3E4E;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;     
+	
+}
+.menucursoscel2:hover{
+    background: #1F3E4E;
+    color: #bed7fc;
+}
+.contenedormenucel {
+    display:none;
+    width:0px;
+    background:#808080;    
+    font-size:0px;
+}

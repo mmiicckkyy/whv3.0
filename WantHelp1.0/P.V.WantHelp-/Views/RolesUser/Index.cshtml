@@ -1,0 +1,52 @@
+﻿@model IEnumerable<P.V.WantHelp_.Models.webpages_UsersInRoles>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
+
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD">Asigacion de Roles</h2>
+    <p>
+    <a href="/RolesUser/Create" class="tooltip circle" title="Crear nuevo Rol">
+        <img src="~/Images/img/folder_new.png"/>
+    </a>
+</p>
+<table class="ink-table hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.webpages_Roles.RoleName)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.webpages_Roles.RoleName)
+        </td>
+        <td>
+            <a href="/RolesUser/EditConfirmed/@item.RoleId @item.UserId" class="tooltip circle" title="Editar">
+                <img src="~/Images/edit.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/RolesUser/Details/@item.RoleId @item.UserId" class="tooltip circle" title="Detalle">
+                <img src="~/Images/detalle.jpg"/>
+            </a><span class="barrita">|</span>
+            <a href="/RolesUser/DeleteConfirmed/@item.UserId @item.RoleId" class="tooltip circle" title="Eliminar">
+                <img src="~/Images/eliminar2.jpg"/>
+            </a>
+            
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</section>
+
+

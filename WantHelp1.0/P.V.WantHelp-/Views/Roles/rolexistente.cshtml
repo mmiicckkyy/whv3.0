@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "rolexistente";
+}
+<!----
+<style>
+    div#pop-up{
+        padding:12px;width:400px;
+        border-radius:10px;-webkit-border-radius:10px;
+        -moz-border-radius:10px; 
+        position:absolute; 
+        top:10%; 
+        left:-50%; 
+        z-index:2; 
+        display:none; 
+        opacity:0; 
+        background-color: #808080;color:#0094ff;border:1px solid black; 
+    }
+</style> 
+<script>$(document).ready(function () {
+    pop = $("div#pop-up");
+    if ($('[abrirPopup]').length == 0) abrir();
+    //funciones abrir cerrar adan-2994.es.tl 
+    function abrir() { pop.stop().css('display', 'block').animate({ 'left': '33%', 'opacity': 1 }, 900); }
+    function cerrar() { pop.stop().animate({ 'left': '-50%', 'opacity': 0 }, 900, function () { pop.css('display', 'none'); }); }
+    $("div#cerrar").click(function () { cerrar(); });
+    $('[abrirPopup]').click(function (e) {
+        e.preventDefault(); abrir();
+    });
+});
+</script> 
+
+<div id="pop-up" > 
+<div style="cursor:pointer;width:28px;height:28px;background-size:28px;background-image:url(http://img.webme.com/pic/a/adan-2994/cerrar2.png);background-repeat:no-repeat;" id="cerrar"></div> 
+  
+Aqui escribes tu anuncio o colocas tus imagenes 
+
+</div>---->
+<meta http-equiv="Refresh" content="8; URL=http://localhost:2606/Roles/Create">
+
+<style type="text/css">
+.info, .exito, .alerta, .error {
+       font-family:Arial, Helvetica, sans-serif; 
+       font-size:13px;
+       border: 1px solid;
+       margin: 10px 0px;
+       padding:15px 10px 15px 50px;
+       background-repeat: no-repeat;
+       background-position: 10px center;
+       position:relative;
+}
+.info {
+       color: #00529B;
+       background-color: #BDE5F8;
+       background-image: url('info.png');
+}
+.exito {
+       color: #4F8A10;
+       background-color: #DFF2BF;
+       background-image:url('exito.png');
+}
+.alerta {
+       color: #9F6000;
+       background-color: #FEEFB3;
+       background-image: url('alerta.png');
+}
+.error {
+       color: #D8000C;
+       background-color: #FFBABA;
+       background-image: url('../Images/img/error.png');
+       text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb;
+       margin: 0 auto;
+
+       position: absolute;
+		/*nos posicionamos en el centro del navegador*/
+		top:35%;
+		left:42%;
+		/*determinamos una anchura*/
+		width:580px;
+		/*indicamos que el margen izquierdo, es la mitad de la anchura*/
+		margin-left:-200px;
+		/*determinamos una altura*/
+		height:50px;
+		/*indicamos que el margen superior, es la mitad de la altura*/
+		margin-top:-25px;
+		border:1px solid #808080;
+		padding:5px;
+        padding-left:45px;
+}
+    #mensajesRolExit {
+        margin:0 auto;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function () {
+            $(".mensajes").fadeOut(800).fadeIn(800).fadeOut(500).fadeIn(500).fadeOut(300);
+        }, 3000);
+        });
+    /*window.alert("El Rol ya Existe");*/
+
+</script>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h1 class="letraD" style="font-size:35px;"> Debe crear un rol nuevo <a href="/Roles/Create" class="tooltip circle" title="Crear nuevo Rol">
+        <img src="~/Images/img/folder_new.png"/>
+    </a></h1>
+<div id="mensajesRolExit" class="letraErrorMsj"><h2 style="color:#b75656;">El rol ya existe</h2></div>
+<!---
+<div class="exito mensajes">Mensaje de Ã©xito de la operaciÃ³n realizada</div>
+<div class="info mensajes">Mensaje de informaciÃ³n que deseamos mostrar al usuario</div> 
+<div class="exito mensajes">Mensaje de Ã©xito de la operaciÃ³n realizada</div>
+<div class="alerta mensajes">Mensaje de alerta que deseamos mostrar al usuario</div> --->
+<div class="error mensajes">
+    <h3>Por favor Verifique el nombre ROL, error que se ha producido Existente
+    </h3>
+</div>
+    </div>
+</section>

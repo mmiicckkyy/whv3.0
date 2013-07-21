@@ -1,0 +1,61 @@
+﻿@model P.V.WantHelp_.Models.webpages_UsersInRoles
+
+@{
+    ViewBag.Title = "Create";
+}
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+    <div id="backbutton" class="win-backbutton">
+        <a href="/RolesUser" class="tooltip circle border" title="Atras">
+            <img src="~/Images/img/resultset_previous.png"/>
+        </a>
+    </div>
+    <div class="centrarH">
+<h2 class="letraD">Nueva Asignacion</h2>
+<div class="Form">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>webpages_UsersInRoles</legend>
+        <table>
+            <tr>
+                <td>
+                    <div class="letraD">
+                       Selecione el Nombre del Usuario
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                       @Html.DropDownList("Id_Usu", String.Empty)
+                        @Html.ValidationMessageFor(model => model.UserId)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="letraD">
+                        Seleccione el Rol que desea Asignar
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownList("RoleId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.RoleId)
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <input type="submit" value="Asignar" />
+        </p>
+    </fieldset>
+}
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+        </div>
+</div>
+</section>

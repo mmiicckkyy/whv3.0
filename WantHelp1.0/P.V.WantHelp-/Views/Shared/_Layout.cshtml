@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Plataforma Virtual</title>
+        <link href="~/Images/vimeo.png" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="~/Css/Mediaquery.css" />
+        <link rel="stylesheet" type="text/css" href="~/Css/estilosGeneral.css" />
+        <link rel="stylesheet" type="text/css" href="~/Css/ChatGeneral.css" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/dropzone.css" rel="stylesheet" type="text/css"/>
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+        <script src="~/Js/dropzone.js"></script>        
+
+    </head>
+    <body>
+        <header>             
+            <div class="content-wrapper">
+                <div class="titulo">
+                    PLATAFORMA VIRTUAL @ViewBag.idUsuarioLogin
+                </div>                                
+            </div>
+            <div class="divImagen">
+                <img  class="imagenindex" src="~/Image/ro2.png" />
+            </div>
+        </header>
+        <div id="body">
+             @RenderSection("featured", required: false)            
+            <div class="float-right">                    
+                <nav>
+                    <ul class="menu">
+                        @if (ViewBag.Menus != null)
+                        {
+                            foreach (var item in ViewBag.Menus)
+                            { 
+                                <li><a href='@item.urls'>@item.label</a></li>
+                            }
+                        }                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="linklogin" id="open">
+                <section id="login" class="usuariologueado">@Html.Partial("../Shared/_LoginPartial")</section>
+            </div>
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <!--<div class="imgflotante"><img src="~/Image/robotLeft.png" style="position:relative; height:120px; width:90px;"></div>-->
+        <!----<div class="menuFloat-container">
+            <span class="conectatecon">Conectate con</span>
+            <div class="cell facebook last-cell" title="Facebook">
+                <em>Facebook</em>
+            </div>
+            <div class="cell twitter" title="Twitter">
+                <em>Twitter</em>
+            </div>
+            <div class="cell chat"  title="Charlar"></div>      
+        </div>--->
+        <footer>
+            <div class="divpie">
+              <p class="texpie">&copy; @DateTime.Now.Year - By  Amelia | Alfredo | Miguel</p> 
+            </div>                
+        </footer>
+        <!---@Scripts.Render("~/bundles/jquery")--->
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
