@@ -67,6 +67,7 @@ namespace P.V.WantHelp_.Controllers
         public ActionResult Edit(int id = 0)
         {
             Usuario usuario = db.Usuario.Find(id);
+            ViewBag.fotoA = usuario.Avatar;
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -90,13 +91,13 @@ namespace P.V.WantHelp_.Controllers
                 {
                     var data = new byte[imagen.ContentLength];
                     imagen.InputStream.Read(data, 0, imagen.ContentLength);
-                    var path = ControllerContext.HttpContext.Server.MapPath("/Avatar");
+                    var path = ControllerContext.HttpContext.Server.MapPath("../Avatar/");
                     //var filemane = Path.Combine(path, Path.GetFileName(imagen.FileName));
                     var filename2 = Path.GetFileName(imagen.FileName);
-                    string ruta = Server.MapPath("Avatar" + filename2);
+                    string ruta = Server.MapPath("../Avatar/" + filename2);
                     imagen.SaveAs(path+filename2);
-                    //System.IO.File.WriteAllBytes(Path.Combine(path, filemane), data);
-                    usuario.Avatar = "../../Avatar" + imagen.FileName;                    
+                    usuario.Avatar = "../Avatar/" + imagen.FileName;
+                    
                 }
                 ViewBag.foto=usuario.Avatar;
                 db.SaveChanges();

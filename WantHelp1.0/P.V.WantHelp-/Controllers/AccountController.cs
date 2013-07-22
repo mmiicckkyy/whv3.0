@@ -38,12 +38,20 @@ namespace P.V.WantHelp_.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                //Usuario usuario = db.Usuario.Find(Convert.ToInt32(Session["idUsuario"]));
+                
                 AdminActions contexto = new AdminActions();
                 Usuario mk=new Usuario(); 
                 Session["idUs"] = contexto.getUserId(model.UserName);
                 Session["idUsuario"] = contexto.getUserIdUsuario(Convert.ToInt32(Session["idUs"]));
                 mk.Estado = "conectado";//preguntar al ingeniero
                 ViewBag.foto = mk.Avatar;
+                //string nombre=contexto.UserProfiles.Where(a => a.UserId == id).FirstOrDefault().UserName;
+                //int aux=Convert.ToInt32(Session["idUs"]);
+                //PlataformaVirtualEntities db=new PlataformaVirtualEntities();
+                //string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+                //ViewBag.fotoA = Cadenausuario;
+
                 //db.Usuario.Add();
                 //db.SaveChanges();//
                 //ViewBag.id = contexto.getUserId(model.UserName);

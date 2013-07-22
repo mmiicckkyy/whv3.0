@@ -14,12 +14,19 @@ namespace P.V.WantHelp_.Controllers
         PlataformaVirtualEntities db = new PlataformaVirtualEntities();
         public ActionResult Index()
         {
+            
             if (Request.IsAuthenticated)
             {
+                int aux = Convert.ToInt32(Session["idUsuario"]);
+                string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+                ViewBag.fotoA = Cadenausuario;
                 Permisos check = new Permisos(Convert.ToInt32(Session["idus"]));
                 ViewBag.Menus = check.getPermisos();
             };
-            PlataformaVirtualEntities conex=new PlataformaVirtualEntities();
+            //int aux = Convert.ToInt32(Session["idUsuario"]);
+            //string Cadenausuario = db.Usuario.Where(a => a.UserId == aux).FirstOrDefault().Avatar;
+            //ViewBag.fotoA = Cadenausuario;
+            
             ViewBag.Message = "Cursos con Certificado de Profesionalidad";
             //Usuario usuario = conex.Usuario.Find(Convert.ToInt32(Session["idus"]));
             //AdminActions cconec = new AdminActions();
